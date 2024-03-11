@@ -21,17 +21,6 @@ contract WineOfferFactory{
             price: _price,
             discount: 0,
             expectedPriceRange: 0,
-            
-            /*lastYearSugarLevel: 0,
-            lastYearAlcoholLevel: 0,
-            lastYearAcidityLevel: 0,
-            lastYearBodyLevel: 0,
-            lastYearTanninLevel: 0,
-            lastYearColor: 0,
-            lastYearAroma: 0,
-            lastYearTaste: 0,
-            lastYearFinish: 0,
-            */
             maxSupply: _maxSupply
         });
         // price

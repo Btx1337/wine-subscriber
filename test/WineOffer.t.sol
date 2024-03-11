@@ -20,20 +20,11 @@ contract WineOfferTest is Test {
             discount: 0,
             expectedPriceRange: 0,
             
-            /* lastYearSugarLevel: 0,
-            lastYearAlcoholLevel: 0,
-            lastYearAcidityLevel: 0,
-            lastYearBodyLevel: 0,
-            lastYearTanninLevel: 0,
-            lastYearColor: 0,
-            lastYearAroma: 0,
-            lastYearTaste: 0,
-            lastYearFinish: 0, */
+           // add dynamic ipfs link to contract factory
+
             maxSupply: 100
         });
         wineOffer = new WineOffer(wine, "Test Wine Offer", "TWO", 100, wine.price);
-        
-        //wineOffer = new WineOffer(wine, "Test Wine Offer", "TWO", 100);
     }
 
     
@@ -94,5 +85,12 @@ contract WineOfferTest is Test {
         uint256 totalSupply = wineOffer.totalSupply();
         assertEq(totalSupply, 100);
         emit log("testTotalSupply passed");
+    }
+
+    
+    function testCurrentDemand() public {
+        uint256 res = wineOffer.checkCurrentDemand(20, 5);
+        assertEq(res, 4);
+        emit log("testCurrentDemand passed");
     }
 }
